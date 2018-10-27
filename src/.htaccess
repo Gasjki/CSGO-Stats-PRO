@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule	^mygames/?$ games.php [NC,L]
+    RewriteRule	^news/?$ news.php [NC,L]
+    RewriteRule	^logout/?$ logout.php [NC,L]
+    RewriteRule ^player/([a-zA-Z0-9]+)/?$ stats.php?id=$1 [NC,L]
+    RewriteRule ^signature/(.*)_(.*)_(.*)_(.*)_(.*)_(.*)_(.*).png banner.php?id=$1&bg=$2&rank=$3&xp_rank=$4&color_username=$5&color_title=$6&color_info=$7
+    RewriteRule ^signature/(.*).png banner.php?id=$1
+</IfModule>
